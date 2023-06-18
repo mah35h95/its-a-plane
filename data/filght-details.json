@@ -1,0 +1,460 @@
+{
+	"identification": { "id": "30c44fdc", "row": 5372291199, "number": { "default": "6E6482", "alternative": null }, "callsign": "IGO6482" },
+	"status": {
+		"live": true,
+		"text": "Estimated- 11:15",
+		"icon": "green",
+		"estimated": null,
+		"ambiguous": false,
+		"generic": { "status": { "text": "estimated", "color": "green", "type": "arrival" }, "eventTime": { "utc": 1687067121, "local": 1687086921 } }
+	},
+	"level": "limited",
+	"promote": false,
+	"aircraft": {
+		"model": { "code": "A20N", "text": "Airbus A320-251N" },
+		"countryId": 102,
+		"registration": "VT-IPF",
+		"age": null,
+		"msn": null,
+		"images": {
+			"thumbnails": [
+				{
+					"src": "https://cdn.jetphotos.com/200/6/78703_1672843317_tb.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10826143",
+					"copyright": "Sandeep Pilania",
+					"source": "Jetphotos"
+				}
+			],
+			"medium": [
+				{
+					"src": "https://cdn.jetphotos.com/400/6/78703_1672843317.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10826143",
+					"copyright": "Sandeep Pilania",
+					"source": "Jetphotos"
+				}
+			],
+			"large": [
+				{
+					"src": "https://cdn.jetphotos.com/640cb/6/78703_1672843317.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10826143",
+					"copyright": "Sandeep Pilania",
+					"source": "Jetphotos"
+				}
+			]
+		},
+		"hex": "80152f"
+	},
+	"airline": { "name": "IndiGo", "short": "IndiGo", "code": { "iata": "6E", "icao": "IGO" }, "url": "indigo-igo" },
+	"owner": null,
+	"airspace": null,
+	"airport": {
+		"origin": {
+			"name": "Cochin International Airport",
+			"code": { "iata": "COK", "icao": "VOCI" },
+			"position": {
+				"latitude": 10.15199,
+				"longitude": 76.401901,
+				"altitude": 30,
+				"country": { "id": null, "name": "India", "code": "IND" },
+				"region": { "city": "Cochin" }
+			},
+			"timezone": { "name": "Asia/Kolkata", "offset": 19800, "offsetHours": "5:30", "abbr": "IST", "abbrName": "India Standard Time", "isDst": false },
+			"visible": true,
+			"website": "http://cial.aero/",
+			"info": { "terminal": "1", "baggage": null, "gate": null }
+		},
+		"destination": {
+			"name": "Bengaluru Kempegowda International Airport",
+			"code": { "iata": "BLR", "icao": "VOBL" },
+			"position": {
+				"latitude": 13.198889,
+				"longitude": 77.705559,
+				"altitude": 3002,
+				"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+				"region": { "city": "Bengaluru" }
+			},
+			"timezone": { "name": "Asia/Kolkata", "offset": 19800, "offsetHours": "5:30", "abbr": "IST", "abbrName": "India Standard Time", "isDst": false },
+			"visible": true,
+			"website": "http://www.bengaluruairport.com/",
+			"info": { "terminal": "1", "baggage": "6", "gate": "A7" }
+		},
+		"real": null
+	},
+	"flightHistory": {
+		"aircraft": [
+			{
+				"identification": { "id": "30c4169f", "number": { "default": "6E6445" } },
+				"airport": {
+					"origin": {
+						"name": "Bengaluru Kempegowda International Airport",
+						"code": { "iata": "BLR", "icao": "VOBL" },
+						"position": {
+							"latitude": 13.198889,
+							"longitude": 77.705559,
+							"altitude": 3002,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Bengaluru" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.bengaluruairport.com/"
+					},
+					"destination": {
+						"name": "Cochin International Airport",
+						"code": { "iata": "COK", "icao": "VOCI" },
+						"position": {
+							"latitude": 10.15199,
+							"longitude": 76.401901,
+							"altitude": 30,
+							"country": { "id": null, "name": "India", "code": "IND" },
+							"region": { "city": "Cochin" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://cial.aero/"
+					}
+				},
+				"time": { "real": { "departure": 1687058991 } }
+			},
+			{
+				"identification": { "id": "30c3e37c", "number": { "default": "6E5352" } },
+				"airport": {
+					"origin": {
+						"name": "Mumbai Chhatrapati Shivaji International Airport",
+						"code": { "iata": "BOM", "icao": "VABB" },
+						"position": {
+							"latitude": 19.08868,
+							"longitude": 72.867912,
+							"altitude": 37,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Mumbai" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.csia.in/"
+					},
+					"destination": {
+						"name": "Bengaluru Kempegowda International Airport",
+						"code": { "iata": "BLR", "icao": "VOBL" },
+						"position": {
+							"latitude": 13.198889,
+							"longitude": 77.705559,
+							"altitude": 3002,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Bengaluru" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.bengaluruairport.com/"
+					}
+				},
+				"time": { "real": { "departure": 1687049593 } }
+			},
+			{
+				"identification": { "id": "30c31ee2", "number": { "default": "6E5195" } },
+				"airport": {
+					"origin": {
+						"name": "Ahmedabad International Airport",
+						"code": { "iata": "AMD", "icao": "VAAH" },
+						"position": {
+							"latitude": 23.07724,
+							"longitude": 72.634651,
+							"altitude": 189,
+							"country": { "id": null, "name": "India", "code": "IND" },
+							"region": { "city": "Ahmedabad" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": null
+					},
+					"destination": {
+						"name": "Mumbai Chhatrapati Shivaji International Airport",
+						"code": { "iata": "BOM", "icao": "VABB" },
+						"position": {
+							"latitude": 19.08868,
+							"longitude": 72.867912,
+							"altitude": 37,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Mumbai" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.csia.in/"
+					}
+				},
+				"time": { "real": { "departure": 1687027551 } }
+			},
+			{
+				"identification": { "id": "30c2c71f", "number": { "default": "6E5194" } },
+				"airport": {
+					"origin": {
+						"name": "Mumbai Chhatrapati Shivaji International Airport",
+						"code": { "iata": "BOM", "icao": "VABB" },
+						"position": {
+							"latitude": 19.08868,
+							"longitude": 72.867912,
+							"altitude": 37,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Mumbai" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.csia.in/"
+					},
+					"destination": {
+						"name": "Ahmedabad International Airport",
+						"code": { "iata": "AMD", "icao": "VAAH" },
+						"position": {
+							"latitude": 23.07724,
+							"longitude": 72.634651,
+							"altitude": 189,
+							"country": { "id": null, "name": "India", "code": "IND" },
+							"region": { "city": "Ahmedabad" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": null
+					}
+				},
+				"time": { "real": { "departure": 1687021435 } }
+			}
+		]
+	},
+	"ems": null,
+	"availability": ["AGE", "MSN"],
+	"time": {
+		"scheduled": { "departure": 1687064400, "arrival": 1687068600 },
+		"real": { "departure": 1687064428, "arrival": null },
+		"estimated": { "departure": null, "arrival": 1687067121 },
+		"other": { "eta": 1687067121, "updated": 1687065247 },
+		"historical": { "flighttime": "2529", "delay": "-1349" }
+	},
+	"trail": [
+		{ "lat": 13.103245, "lng": 77.697723, "alt": 12400, "spd": 282, "ts": 1687066373, "hd": 64 },
+		{ "lat": 13.101429, "lng": 77.694252, "alt": 12450, "spd": 282, "ts": 1687066370, "hd": 56 },
+		{ "lat": 13.099365, "lng": 77.691101, "alt": 12500, "spd": 283, "ts": 1687066367, "hd": 52 },
+		{ "lat": 13.096161, "lng": 77.687263, "alt": 12550, "spd": 285, "ts": 1687066364, "hd": 46 },
+		{ "lat": 13.093689, "lng": 77.684845, "alt": 12600, "spd": 286, "ts": 1687066361, "hd": 41 },
+		{ "lat": 13.076569, "lng": 77.674149, "alt": 12825, "spd": 294, "ts": 1687066346, "hd": 27 },
+		{ "lat": 13.034905, "lng": 77.651993, "alt": 13200, "spd": 316, "ts": 1687066313, "hd": 27 },
+		{ "lat": 12.990326, "lng": 77.628349, "alt": 13625, "spd": 339, "ts": 1687066280, "hd": 27 },
+		{ "lat": 12.945465, "lng": 77.604767, "alt": 14325, "spd": 354, "ts": 1687066249, "hd": 26 },
+		{ "lat": 12.898727, "lng": 77.580383, "alt": 15925, "spd": 361, "ts": 1687066217, "hd": 27 },
+		{ "lat": 12.852514, "lng": 77.554901, "alt": 17575, "spd": 370, "ts": 1687066186, "hd": 28 },
+		{ "lat": 12.802052, "lng": 77.532928, "alt": 19125, "spd": 381, "ts": 1687066154, "hd": 20 },
+		{ "lat": 12.749168, "lng": 77.512733, "alt": 20200, "spd": 388, "ts": 1687066122, "hd": 20 },
+		{ "lat": 12.694609, "lng": 77.493126, "alt": 21175, "spd": 398, "ts": 1687066092, "hd": 19 },
+		{ "lat": 12.63842, "lng": 77.473175, "alt": 22175, "spd": 410, "ts": 1687066060, "hd": 19 },
+		{ "lat": 12.584793, "lng": 77.452904, "alt": 23425, "spd": 411, "ts": 1687066029, "hd": 22 },
+		{ "lat": 12.524088, "lng": 77.429329, "alt": 24550, "spd": 423, "ts": 1687065996, "hd": 19 },
+		{ "lat": 12.462314, "lng": 77.407501, "alt": 25750, "spd": 430, "ts": 1687065963, "hd": 21 },
+		{ "lat": 12.400864, "lng": 77.38031, "alt": 26625, "spd": 435, "ts": 1687065929, "hd": 24 },
+		{ "lat": 12.337693, "lng": 77.35334, "alt": 27475, "spd": 442, "ts": 1687065896, "hd": 19 },
+		{ "lat": 12.273422, "lng": 77.329498, "alt": 28300, "spd": 444, "ts": 1687065863, "hd": 17 },
+		{ "lat": 12.206085, "lng": 77.311073, "alt": 28975, "spd": 446, "ts": 1687065830, "hd": 14 },
+		{ "lat": 12.199759, "lng": 77.309395, "alt": 28975, "spd": 445, "ts": 1687065827, "hd": 15 },
+		{ "lat": 12.195522, "lng": 77.308189, "alt": 29000, "spd": 444, "ts": 1687065823, "hd": 15 },
+		{ "lat": 12.189192, "lng": 77.306358, "alt": 28975, "spd": 443, "ts": 1687065820, "hd": 16 },
+		{ "lat": 12.15828, "lng": 77.294937, "alt": 29000, "spd": 440, "ts": 1687065804, "hd": 23 },
+		{ "lat": 12.101068, "lng": 77.266174, "alt": 29025, "spd": 438, "ts": 1687065773, "hd": 26 },
+		{ "lat": 12.043808, "lng": 77.236916, "alt": 29025, "spd": 441, "ts": 1687065742, "hd": 26 },
+		{ "lat": 11.987457, "lng": 77.208076, "alt": 29025, "spd": 442, "ts": 1687065711, "hd": 26 },
+		{ "lat": 11.930734, "lng": 77.1791, "alt": 29025, "spd": 442, "ts": 1687065680, "hd": 26 },
+		{ "lat": 11.871333, "lng": 77.148598, "alt": 29000, "spd": 442, "ts": 1687065648, "hd": 26 },
+		{ "lat": 11.814725, "lng": 77.119545, "alt": 29000, "spd": 443, "ts": 1687065617, "hd": 26 },
+		{ "lat": 11.753632, "lng": 77.088463, "alt": 29000, "spd": 443, "ts": 1687065584, "hd": 26 },
+		{ "lat": 11.695598, "lng": 77.058876, "alt": 29000, "spd": 442, "ts": 1687065552, "hd": 26 },
+		{ "lat": 11.637594, "lng": 77.029243, "alt": 29000, "spd": 442, "ts": 1687065520, "hd": 26 },
+		{ "lat": 11.577713, "lng": 76.998726, "alt": 29000, "spd": 440, "ts": 1687065488, "hd": 26 },
+		{ "lat": 11.519816, "lng": 76.969154, "alt": 29000, "spd": 440, "ts": 1687065456, "hd": 26 },
+		{ "lat": 11.462265, "lng": 76.939911, "alt": 29000, "spd": 440, "ts": 1687065425, "hd": 26 },
+		{ "lat": 11.403902, "lng": 76.910225, "alt": 29000, "spd": 442, "ts": 1687065393, "hd": 26 },
+		{ "lat": 11.346316, "lng": 76.880928, "alt": 29000, "spd": 440, "ts": 1687065361, "hd": 26 },
+		{ "lat": 11.289616, "lng": 76.852158, "alt": 29000, "spd": 439, "ts": 1687065330, "hd": 26 },
+		{ "lat": 11.233978, "lng": 76.823837, "alt": 29000, "spd": 432, "ts": 1687065300, "hd": 26 },
+		{ "lat": 11.178864, "lng": 76.795662, "alt": 28975, "spd": 426, "ts": 1687065269, "hd": 26 },
+		{ "lat": 11.124939, "lng": 76.768387, "alt": 28300, "spd": 424, "ts": 1687065238, "hd": 26 },
+		{ "lat": 11.066483, "lng": 76.739594, "alt": 27450, "spd": 423, "ts": 1687065205, "hd": 25 },
+		{ "lat": 11.007556, "lng": 76.710304, "alt": 27000, "spd": 421, "ts": 1687065172, "hd": 26 },
+		{ "lat": 10.95039, "lng": 76.681343, "alt": 26600, "spd": 408, "ts": 1687065138, "hd": 27 },
+		{ "lat": 10.898158, "lng": 76.653732, "alt": 26075, "spd": 395, "ts": 1687065107, "hd": 28 },
+		{ "lat": 10.848906, "lng": 76.626892, "alt": 25375, "spd": 386, "ts": 1687065076, "hd": 27 },
+		{ "lat": 10.843506, "lng": 76.624001, "alt": 25300, "spd": 386, "ts": 1687065073, "hd": 27 },
+		{ "lat": 10.839111, "lng": 76.621727, "alt": 25200, "spd": 385, "ts": 1687065070, "hd": 26 },
+		{ "lat": 10.833435, "lng": 76.618797, "alt": 25125, "spd": 386, "ts": 1687065066, "hd": 26 },
+		{ "lat": 10.828842, "lng": 76.616531, "alt": 25050, "spd": 384, "ts": 1687065064, "hd": 25 },
+		{ "lat": 10.823535, "lng": 76.613976, "alt": 24950, "spd": 383, "ts": 1687065061, "hd": 24 },
+		{ "lat": 10.819299, "lng": 76.612053, "alt": 24875, "spd": 383, "ts": 1687065058, "hd": 23 },
+		{ "lat": 10.808533, "lng": 76.607521, "alt": 24700, "spd": 383, "ts": 1687065051, "hd": 19 },
+		{ "lat": 10.755066, "lng": 76.59417, "alt": 23525, "spd": 384, "ts": 1687065020, "hd": 16 },
+		{ "lat": 10.700498, "lng": 76.577408, "alt": 22300, "spd": 385, "ts": 1687064989, "hd": 16 },
+		{ "lat": 10.695144, "lng": 76.575768, "alt": 22225, "spd": 384, "ts": 1687064985, "hd": 16 },
+		{ "lat": 10.690303, "lng": 76.574318, "alt": 22125, "spd": 383, "ts": 1687064982, "hd": 16 },
+		{ "lat": 10.684577, "lng": 76.57254, "alt": 22050, "spd": 382, "ts": 1687064979, "hd": 17 },
+		{ "lat": 10.679489, "lng": 76.570969, "alt": 21925, "spd": 382, "ts": 1687064976, "hd": 17 },
+		{ "lat": 10.673447, "lng": 76.569023, "alt": 21800, "spd": 381, "ts": 1687064972, "hd": 18 },
+		{ "lat": 10.668888, "lng": 76.567482, "alt": 21700, "spd": 380, "ts": 1687064970, "hd": 19 },
+		{ "lat": 10.663674, "lng": 76.565651, "alt": 21600, "spd": 379, "ts": 1687064967, "hd": 20 },
+		{ "lat": 10.657344, "lng": 76.563095, "alt": 21450, "spd": 378, "ts": 1687064963, "hd": 24 },
+		{ "lat": 10.652316, "lng": 76.560684, "alt": 21325, "spd": 378, "ts": 1687064960, "hd": 27 },
+		{ "lat": 10.642912, "lng": 76.555336, "alt": 21125, "spd": 376, "ts": 1687064953, "hd": 33 },
+		{ "lat": 10.598595, "lng": 76.522087, "alt": 20250, "spd": 360, "ts": 1687064921, "hd": 37 },
+		{ "lat": 10.556442, "lng": 76.48909, "alt": 19050, "spd": 354, "ts": 1687064889, "hd": 38 },
+		{ "lat": 10.516104, "lng": 76.455643, "alt": 17775, "spd": 348, "ts": 1687064857, "hd": 39 },
+		{ "lat": 10.4743, "lng": 76.421288, "alt": 16300, "spd": 346, "ts": 1687064824, "hd": 38 },
+		{ "lat": 10.43541, "lng": 76.389755, "alt": 15775, "spd": 305, "ts": 1687064791, "hd": 38 },
+		{ "lat": 10.402359, "lng": 76.362755, "alt": 14700, "spd": 287, "ts": 1687064760, "hd": 39 },
+		{ "lat": 10.370682, "lng": 76.335754, "alt": 13225, "spd": 279, "ts": 1687064729, "hd": 40 },
+		{ "lat": 10.367509, "lng": 76.333054, "alt": 13100, "spd": 278, "ts": 1687064726, "hd": 40 },
+		{ "lat": 10.361984, "lng": 76.328354, "alt": 12900, "spd": 276, "ts": 1687064722, "hd": 39 },
+		{ "lat": 10.361435, "lng": 76.327934, "alt": 12800, "spd": 276, "ts": 1687064720, "hd": 38 },
+		{ "lat": 10.357081, "lng": 76.32444, "alt": 12600, "spd": 276, "ts": 1687064716, "hd": 37 },
+		{ "lat": 10.356583, "lng": 76.324066, "alt": 12525, "spd": 276, "ts": 1687064715, "hd": 37 },
+		{ "lat": 10.353683, "lng": 76.321831, "alt": 12375, "spd": 275, "ts": 1687064712, "hd": 35 },
+		{ "lat": 10.350378, "lng": 76.319466, "alt": 12200, "spd": 275, "ts": 1687064708, "hd": 34 },
+		{ "lat": 10.349167, "lng": 76.318573, "alt": 12150, "spd": 274, "ts": 1687064707, "hd": 34 },
+		{ "lat": 10.345769, "lng": 76.316292, "alt": 12025, "spd": 273, "ts": 1687064704, "hd": 33 },
+		{ "lat": 10.342575, "lng": 76.314201, "alt": 11875, "spd": 271, "ts": 1687064701, "hd": 30 },
+		{ "lat": 10.339096, "lng": 76.312202, "alt": 11750, "spd": 271, "ts": 1687064698, "hd": 28 },
+		{ "lat": 10.335574, "lng": 76.310326, "alt": 11575, "spd": 269, "ts": 1687064695, "hd": 25 },
+		{ "lat": 10.332223, "lng": 76.308762, "alt": 11425, "spd": 268, "ts": 1687064692, "hd": 22 },
+		{ "lat": 10.328732, "lng": 76.307388, "alt": 11275, "spd": 267, "ts": 1687064689, "hd": 18 },
+		{ "lat": 10.32518, "lng": 76.30619, "alt": 11100, "spd": 266, "ts": 1687064686, "hd": 15 },
+		{ "lat": 10.32105, "lng": 76.305069, "alt": 10925, "spd": 266, "ts": 1687064682, "hd": 12 },
+		{ "lat": 10.317513, "lng": 76.304359, "alt": 10800, "spd": 265, "ts": 1687064680, "hd": 8 },
+		{ "lat": 10.302568, "lng": 76.303123, "alt": 10200, "spd": 260, "ts": 1687064667, "hd": 1 },
+		{ "lat": 10.283981, "lng": 76.302979, "alt": 9400, "spd": 257, "ts": 1687064652, "hd": 1 },
+		{ "lat": 10.266026, "lng": 76.302795, "alt": 8600, "spd": 253, "ts": 1687064637, "hd": 1 },
+		{ "lat": 10.247684, "lng": 76.302322, "alt": 7750, "spd": 252, "ts": 1687064621, "hd": 2 },
+		{ "lat": 10.230286, "lng": 76.301537, "alt": 6775, "spd": 255, "ts": 1687064606, "hd": 2 },
+		{ "lat": 10.211472, "lng": 76.300606, "alt": 5675, "spd": 260, "ts": 1687064590, "hd": 2 },
+		{ "lat": 10.206711, "lng": 76.300331, "alt": 5425, "spd": 261, "ts": 1687064586, "hd": 2 },
+		{ "lat": 10.20332, "lng": 76.300194, "alt": 5250, "spd": 261, "ts": 1687064584, "hd": 2 },
+		{ "lat": 10.199615, "lng": 76.300003, "alt": 5075, "spd": 262, "ts": 1687064581, "hd": 2 },
+		{ "lat": 10.195999, "lng": 76.299866, "alt": 4900, "spd": 260, "ts": 1687064578, "hd": 1 },
+		{ "lat": 10.191774, "lng": 76.299767, "alt": 4725, "spd": 260, "ts": 1687064575, "hd": 1 },
+		{ "lat": 10.18805, "lng": 76.299721, "alt": 4500, "spd": 259, "ts": 1687064572, "hd": 359 },
+		{ "lat": 10.184555, "lng": 76.299767, "alt": 4275, "spd": 259, "ts": 1687064568, "hd": 358 },
+		{ "lat": 10.180882, "lng": 76.299957, "alt": 4075, "spd": 258, "ts": 1687064565, "hd": 354 },
+		{ "lat": 10.177343, "lng": 76.30043, "alt": 3900, "spd": 257, "ts": 1687064562, "hd": 349 },
+		{ "lat": 10.173805, "lng": 76.301231, "alt": 3725, "spd": 255, "ts": 1687064559, "hd": 341 },
+		{ "lat": 10.169907, "lng": 76.302559, "alt": 3500, "spd": 254, "ts": 1687064556, "hd": 336 },
+		{ "lat": 10.166404, "lng": 76.304214, "alt": 3300, "spd": 254, "ts": 1687064552, "hd": 330 },
+		{ "lat": 10.163238, "lng": 76.30616, "alt": 3125, "spd": 251, "ts": 1687064549, "hd": 324 },
+		{ "lat": 10.160491, "lng": 76.308334, "alt": 2950, "spd": 252, "ts": 1687064546, "hd": 316 },
+		{ "lat": 10.158024, "lng": 76.310707, "alt": 2800, "spd": 252, "ts": 1687064543, "hd": 312 },
+		{ "lat": 10.155441, "lng": 76.313828, "alt": 2675, "spd": 254, "ts": 1687064540, "hd": 304 },
+		{ "lat": 10.153508, "lng": 76.316765, "alt": 2550, "spd": 253, "ts": 1687064537, "hd": 297 },
+		{ "lat": 10.151733, "lng": 76.320206, "alt": 2450, "spd": 253, "ts": 1687064534, "hd": 292 },
+		{ "lat": 10.150177, "lng": 76.324585, "alt": 2350, "spd": 252, "ts": 1687064530, "hd": 283 },
+		{ "lat": 10.149673, "lng": 76.326721, "alt": 2300, "spd": 251, "ts": 1687064528, "hd": 280 },
+		{ "lat": 10.149133, "lng": 76.33017, "alt": 2250, "spd": 250, "ts": 1687064525, "hd": 276 },
+		{ "lat": 10.148849, "lng": 76.333893, "alt": 2175, "spd": 246, "ts": 1687064522, "hd": 270 },
+		{ "lat": 10.148941, "lng": 76.344368, "alt": 1950, "spd": 230, "ts": 1687064512, "hd": 268 },
+		{ "lat": 10.149216, "lng": 76.353867, "alt": 1700, "spd": 214, "ts": 1687064503, "hd": 268 },
+		{ "lat": 10.149445, "lng": 76.362709, "alt": 1475, "spd": 198, "ts": 1687064494, "hd": 268 },
+		{ "lat": 10.149628, "lng": 76.36834, "alt": 1325, "spd": 188, "ts": 1687064488, "hd": 267 },
+		{ "lat": 10.149924, "lng": 76.376434, "alt": 1100, "spd": 175, "ts": 1687064479, "hd": 267 },
+		{ "lat": 10.150249, "lng": 76.383583, "alt": 875, "spd": 163, "ts": 1687064470, "hd": 267 },
+		{ "lat": 10.150497, "lng": 76.388687, "alt": 700, "spd": 154, "ts": 1687064463, "hd": 267 },
+		{ "lat": 10.150762, "lng": 76.393761, "alt": 450, "spd": 152, "ts": 1687064456, "hd": 266 },
+		{ "lat": 10.151134, "lng": 76.400536, "alt": 150, "spd": 151, "ts": 1687064446, "hd": 267 },
+		{ "lat": 10.151367, "lng": 76.407494, "alt": 125, "spd": 108, "ts": 1687064436, "hd": 267 },
+		{ "lat": 10.151539, "lng": 76.411682, "alt": 0, "spd": 86, "ts": 1687064427, "hd": 267 },
+		{ "lat": 10.151619, "lng": 76.413895, "alt": 0, "spd": 27, "ts": 1687064421, "hd": 267 },
+		{ "lat": 10.151658, "lng": 76.415062, "alt": 0, "spd": 27, "ts": 1687064416, "hd": 267 },
+		{ "lat": 10.15167, "lng": 76.415443, "alt": 0, "spd": 12, "ts": 1687064412, "hd": 267 },
+		{ "lat": 10.151653, "lng": 76.415802, "alt": 0, "spd": 5, "ts": 1687064387, "hd": 210 },
+		{ "lat": 10.151882, "lng": 76.415886, "alt": 0, "spd": 10, "ts": 1687064378, "hd": 180 },
+		{ "lat": 10.152217, "lng": 76.415894, "alt": 0, "spd": 0, "ts": 1687064371, "hd": 180 },
+		{ "lat": 10.152672, "lng": 76.415886, "alt": 0, "spd": 0, "ts": 1687064363, "hd": 177 },
+		{ "lat": 10.153393, "lng": 76.41552, "alt": 0, "spd": 0, "ts": 1687064345, "hd": 92 },
+		{ "lat": 10.153334, "lng": 76.413673, "alt": 0, "spd": 19, "ts": 1687064322, "hd": 87 },
+		{ "lat": 10.153299, "lng": 76.41291, "alt": 0, "spd": 21, "ts": 1687064314, "hd": 87 },
+		{ "lat": 10.153267, "lng": 76.411819, "alt": 0, "spd": 0, "ts": 1687064303, "hd": 87 },
+		{ "lat": 10.153084, "lng": 76.406723, "alt": 0, "spd": 0, "ts": 1687064258, "hd": 87 },
+		{ "lat": 10.152996, "lng": 76.40448, "alt": 0, "spd": 0, "ts": 1687064241, "hd": 87 },
+		{ "lat": 10.152935, "lng": 76.402626, "alt": 0, "spd": 25, "ts": 1687064226, "hd": 87 },
+		{ "lat": 10.152889, "lng": 76.401428, "alt": 0, "spd": 24, "ts": 1687064216, "hd": 87 },
+		{ "lat": 10.152868, "lng": 76.40081, "alt": 0, "spd": 23, "ts": 1687064210, "hd": 87 },
+		{ "lat": 10.152821, "lng": 76.39975, "alt": 0, "spd": 21, "ts": 1687064200, "hd": 87 },
+		{ "lat": 10.152799, "lng": 76.39901, "alt": 0, "spd": 20, "ts": 1687064193, "hd": 87 },
+		{ "lat": 10.152776, "lng": 76.398308, "alt": 0, "spd": 19, "ts": 1687064185, "hd": 87 },
+		{ "lat": 10.152752, "lng": 76.397766, "alt": 0, "spd": 18, "ts": 1687064179, "hd": 87 },
+		{ "lat": 10.152729, "lng": 76.397125, "alt": 0, "spd": 17, "ts": 1687064172, "hd": 87 },
+		{ "lat": 10.152705, "lng": 76.396561, "alt": 0, "spd": 16, "ts": 1687064165, "hd": 87 },
+		{ "lat": 10.152682, "lng": 76.395836, "alt": 0, "spd": 15, "ts": 1687064155, "hd": 87 },
+		{ "lat": 10.152659, "lng": 76.395187, "alt": 0, "spd": 14, "ts": 1687064146, "hd": 87 },
+		{ "lat": 10.152647, "lng": 76.394737, "alt": 0, "spd": 13, "ts": 1687064139, "hd": 87 },
+		{ "lat": 10.152624, "lng": 76.394272, "alt": 0, "spd": 13, "ts": 1687064131, "hd": 87 },
+		{ "lat": 10.152613, "lng": 76.393867, "alt": 0, "spd": 13, "ts": 1687064125, "hd": 87 },
+		{ "lat": 10.152603, "lng": 76.393501, "alt": 0, "spd": 0, "ts": 1687064118, "hd": 87 },
+		{ "lat": 10.152589, "lng": 76.393074, "alt": 0, "spd": 0, "ts": 1687064111, "hd": 87 },
+		{ "lat": 10.152546, "lng": 76.392212, "alt": 0, "spd": 11, "ts": 1687064095, "hd": 87 },
+		{ "lat": 10.152534, "lng": 76.391968, "alt": 0, "spd": 11, "ts": 1687064090, "hd": 90 },
+		{ "lat": 10.152523, "lng": 76.391594, "alt": 0, "spd": 10, "ts": 1687064083, "hd": 87 },
+		{ "lat": 10.152523, "lng": 76.391373, "alt": 0, "spd": 10, "ts": 1687064078, "hd": 87 },
+		{ "lat": 10.152508, "lng": 76.391014, "alt": 0, "spd": 8, "ts": 1687064070, "hd": 104 },
+		{ "lat": 10.152601, "lng": 76.390732, "alt": 0, "spd": 7, "ts": 1687064061, "hd": 143 },
+		{ "lat": 10.152834, "lng": 76.390579, "alt": 0, "spd": 6, "ts": 1687064052, "hd": 174 },
+		{ "lat": 10.153061, "lng": 76.390572, "alt": 0, "spd": 6, "ts": 1687064044, "hd": 168 }
+	],
+	"firstTimestamp": 1687064044,
+	"s": "6eoHfGw3PlH04IUIfmp67wVdLYDKovHmvLLSLKLZWfjLC3_yIGCay4axxIjnlP4v"
+}
