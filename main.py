@@ -3,6 +3,14 @@ from ssd1306 import SSD1306_SPI
 import framebuf
 from time import sleep
 from utime import sleep_ms
+import network  # handles connecting to WiFi
+import urequests  # handles making and servicing network requests
+
+try:
+    from code_secrets import secrets
+except ImportError:
+    print("Secrets including geo are kept in code_secrets.py, please add them there!")
+    raise
 
 
 def display_logo(oled):
@@ -47,25 +55,47 @@ def display_plane(oled):
         sleep_ms(6)
 
 
-def main():
-    spi = SPI(0, 100000, mosi=Pin(19), sck=Pin(18))
-    # oled = SSD1306_SPI(WIDTH, HEIGHT, spi, dc,rst, cs) use GPIO PIN NUMBERS
-    oled = SSD1306_SPI(128, 64, spi, Pin(17), Pin(20), Pin(16))
+def checkConnection():
+    global wlan
+    # Fill in your network name (ssid) and password here:
+    print("Check and reconnect WiFi")
+    attempts = 10
+    attempt = 1
+    while (wlan.isconnected == False) and attempt < attempts:
+        print("Connect attempt " + str(attempt) + " of " + str(attempts))
+        try:
+            print("Attempt WiFi connect...")
+            wlan.connect(secrets["ssid"], secrets["password"])
+        except Exception as e:
+            print(e.__class__.__name__ + "--------------------------------------")
+            print(e)
+        attempt += 1
+    if wlan.isconnected == True:
+        print("Successfully connected.")
+    else:
+        print("Failed to connect.")
 
-    oled.fill(0)
-    oled.show()
 
-    display_logo(oled)
-    sleep(2)
+# Connect to network
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
 
-    display_pikachu(oled)
-    sleep(2)
+spi = SPI(0, 100000, mosi=Pin(19), sck=Pin(18))
+# oled = SSD1306_SPI(WIDTH, HEIGHT, spi, dc,rst, cs) use GPIO PIN NUMBERS
+oled = SSD1306_SPI(128, 64, spi, Pin(17), Pin(20), Pin(16))
 
-    display_plane(oled)
+oled.fill(0)
+oled.show()
 
-    # oled.fill(0)
-    # oled.show()
+display_logo(oled)
+sleep(2)
 
+checkConnection()
 
-if __name__ == "__main__":
-    main()
+display_pikachu(oled)
+sleep(2)
+
+display_plane(oled)
+
+# oled.fill(0)
+# oled.show()
