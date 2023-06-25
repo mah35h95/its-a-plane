@@ -61,19 +61,15 @@ def checkConnection():
     print("Check and reconnect WiFi")
     attempts = 10
     attempt = 1
-    while (wlan.isconnected == False) and attempt < attempts:
+    while (wlan.isconnected() == False) and attempt < attempts:
         print("Connect attempt " + str(attempt) + " of " + str(attempts))
-        try:
-            print("Attempt WiFi connect...")
-            wlan.connect(secrets["ssid"], secrets["password"])
-        except Exception as e:
-            print(e.__class__.__name__ + "--------------------------------------")
-            print(e)
+        print("Attempt WiFi connect...")
+        wlan.connect(secrets["ssid"], secrets["password"])
         attempt += 1
-    if wlan.isconnected == True:
-        print("Successfully connected.")
+    if wlan.isconnected() == True:
+        print(f"Successfully connected. Status: {wlan.status()}")
     else:
-        print("Failed to connect.")
+        print(f"Failed to connect. Status: {wlan.status()}")
 
 
 # Connect to network
@@ -91,6 +87,11 @@ display_logo(oled)
 sleep(2)
 
 checkConnection()
+print("Querying the current GMT+0 time:")
+r = urequests.get(
+    "http://date.jsontest.com"
+)  # Server that returns the current GMT+0 time.
+print(r.json())
 
 display_pikachu(oled)
 sleep(2)
