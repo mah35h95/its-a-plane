@@ -29,7 +29,10 @@ FLIGHT_SEARCH_HEAD = "https://data-live.flightradar24.com/zones/fcgi/feed.js?bou
 FLIGHT_SEARCH_TAIL = "&faa=1&satellite=1&mlat=1&flarm=1&adsb=1&gnd=0&air=1&vehicles=0&estimated=0&maxage=14400&gliders=0&stats=0&ems=1&limit=1"
 FLIGHT_SEARCH_URL = FLIGHT_SEARCH_HEAD + BOUNDS_BOX + FLIGHT_SEARCH_TAIL
 # Used to get more flight details with a fr24 flight ID from the initial search
-FLIGHT_LONG_DETAILS_HEAD = "https://data-live.flightradar24.com/clickhandler/?flight="
+FLIGHT_LONG_DETAILS_HEAD = (
+    # "https://data-live.flightradar24.com/clickhandler/?flight="
+    "https://data-live.flightradar24.com/clickhandler/?version=1.5&notrail=true&flight="
+)
 
 # Request headers
 rheaders = {
@@ -62,69 +65,29 @@ def get_flights():
 
 # Take the flight ID we found with a search, and load details about it
 def get_flight_details(fn):
-    # the JSON from FR24 is too big for the matrixportal memory to handle. So we load it in chunks into our static array,
-    # as far as the big "trails" section of waypoints at the end of it, then ignore most of that part. Should be about 9KB, we have 14K before we run out of room..
-    global json_bytes
-    global json_size
-    byte_counter = 0
-    chunk_length = 1024
-
-    # zero out any old data in the byte array
-    for i in range(0, json_size):
-        json_bytes[i] = 0
-
+    global response
     # Get the URL response one chunk at a time
     try:
-        response = urequests.get(url=FLIGHT_LONG_DETAILS_HEAD + fn, headers=rheaders)
-        for chunk in response.iter_content(chunk_size=chunk_length):
-            # if the chunk will fit in the byte array, add it
-            if byte_counter + chunk_length <= json_size:
-                for i in range(0, len(chunk)):
-                    json_bytes[i + byte_counter] = chunk[i]
-            else:
-                print("Exceeded max string size while parsing JSON")
-                return False
-
-            # check if this chunk contains the "trail:" tag which is the last bit we care about
-            trail_start = json_bytes.find((b'"trail":'))
-            byte_counter += len(chunk)
-
-            # if it does, find the first/most recent of the many trail entries, giving us things like speed and heading
-            if not trail_start == -1:
-                # work out the location of the first } character after the "trail:" tag, giving us the first entry
-                trail_end = json_bytes[trail_start:].find((b"}"))
-                if not trail_end == -1:
-                    trail_end += trail_start
-                    # characters to add to make the whole JSON object valid, since we're cutting off the end
-                    closing_bytes = b"}]}"
-                    for i in range(0, len(closing_bytes)):
-                        json_bytes[trail_end + i] = closing_bytes[i]
-                    # zero out the rest
-                    for i in range(trail_end + 3, json_size):
-                        json_bytes[i] = 0
-                    # print(json_bytes.decode('utf-8'))
-
-                    # Stop reading chunks
-                    print("Details lookup saved " + str(trail_end) + " bytes.")
-                    return True
+        response = urequests.get(
+            url=FLIGHT_LONG_DETAILS_HEAD + fn, headers=rheaders
+        ).json()
+        print(response["identification"])
+        return True
     # Handle occasional URL fetching errors
     except Exception as e:
+        print("Failed to find a valid trail entry in JSON")
         print(e.__class__.__name__ + "----------------ERROR---------------")
         print(e)
         return False
 
-    # If we got here we got through all the JSON without finding the right trail entries
-    print("Failed to find a valid trail entry in JSON")
-    return False
-
 
 # Look at the byte array that fetch_details saved into and extract any fields we want
 def parse_details_json():
-    global json_bytes
+    global response
 
     try:
         # get the JSON from the bytes
-        long_json = json.loads(json_bytes.decode("utf8"))
+        long_json = json.loads(response)
 
         # Some available values from the JSON. Put the details URL and a flight ID in your browser and have a look for more.
 
@@ -159,6 +122,8 @@ def parse_details_json():
         # altitude=long_json["trail"][0]["alt"]
         # speed=long_json["trail"][0]["spd"]
         # heading=long_json["trail"][0]["hd"]
+
+        response = long_json = ""
 
         if flight_number:
             print("Flight is called " + flight_number)
@@ -334,9 +299,7 @@ def clear_flight(oled):
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 
-# Some memory shenanigans - the matrixportal doesn't do great at assigning big strings dynamically. So we create a big static array to put the JSON results in each time.
-json_size = 14336
-json_bytes = bytearray(json_size)
+response = ""
 
 # text strings to go in the lines
 line1_short = ""
@@ -365,15 +328,6 @@ checkConnection()
 display_pikachu(oled)
 sleep(2)
 
-display_plane(oled)
-line1_short = "some"
-line1_long = "some thing very long yeah"
-line2_short = "how"
-line2_long = "How does this even work?"
-line3_short = "yup"
-line3_long = "yup i totally get what is happening"
-display_flight(oled)
-
 last_flight = ""
 flight_id = get_flights()
 
@@ -383,14 +337,15 @@ if flight_id:
     else:
         print("New flight " + flight_id + " found, clear display")
         clear_flight(oled)
-        if get_flight_details(flight_id):
-            if parse_details_json():
-                display_plane(oled)
-                display_flight(oled)
-            else:
-                print("error parsing JSON, skip displaying this flight")
-        else:
-            print("error loading details, skip displaying this flight")
+        print(get_flight_details(flight_id))
+        # if get_flight_details(flight_id):
+        #     if parse_details_json():
+        #         display_plane(oled)
+        #         display_flight(oled)
+        #     else:
+        #         print("error parsing JSON, skip displaying this flight")
+        # else:
+        #     print("error loading details, skip displaying this flight")
 
         last_flight = flight_id
 else:

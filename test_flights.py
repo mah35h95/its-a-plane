@@ -9,7 +9,10 @@ FLIGHT_SEARCH_HEAD = "https://data-live.flightradar24.com/zones/fcgi/feed.js?bou
 FLIGHT_SEARCH_TAIL = "&faa=1&satellite=1&mlat=1&flarm=1&adsb=1&gnd=0&air=1&vehicles=0&estimated=0&maxage=14400&gliders=0&stats=0&ems=1&limit=1"
 FLIGHT_SEARCH_URL = FLIGHT_SEARCH_HEAD + BOUNDS_BOX + FLIGHT_SEARCH_TAIL
 # Used to get more flight details with a fr24 flight ID from the initial search
-FLIGHT_LONG_DETAILS_HEAD = "https://data-live.flightradar24.com/clickhandler/?flight="
+FLIGHT_LONG_DETAILS_HEAD = (
+    "https://data-live.flightradar24.com/clickhandler/?version=1.5&notrail=true&flight="
+    # "https://data-live.flightradar24.com/clickhandler/?version=1.5&flight="
+)
 
 # Request headers
 rheaders = {
@@ -22,7 +25,6 @@ rheaders = {
 # Look for flights overhead
 def get_flights():
     try:
-        # response = json.loads(matrixportal.fetch())
         response = requests.get(url=FLIGHT_SEARCH_URL, headers=rheaders).json()
         print(response)
     except:
