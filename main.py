@@ -47,7 +47,7 @@ def get_flights():
     try:
         response = urequests.get(url=FLIGHT_SEARCH_URL, headers=rheaders).json()
     except Exception as e:
-        print("Error during get")
+        print("Error getting a flight")
         print(e.__class__.__name__ + "----------------ERROR---------------")
         print(e)
         checkConnection()
@@ -65,32 +65,25 @@ def get_flights():
 
 # Take the flight ID we found with a search, and load details about it
 def get_flight_details(fn):
-    global response
     # Get the URL response one chunk at a time
     try:
         response = urequests.get(
             url=FLIGHT_LONG_DETAILS_HEAD + fn, headers=rheaders
         ).json()
-        print(response["identification"])
-        return True
     # Handle occasional URL fetching errors
     except Exception as e:
-        print("Failed to find a valid trail entry in JSON")
+        print("Error getting a flight details")
         print(e.__class__.__name__ + "----------------ERROR---------------")
         print(e)
+        checkConnection()
         return False
+    return parse_details_json(response)
 
 
 # Look at the byte array that fetch_details saved into and extract any fields we want
-def parse_details_json():
-    global response
-
+def parse_details_json(long_json):
     try:
-        # get the JSON from the bytes
-        long_json = json.loads(response)
-
         # Some available values from the JSON. Put the details URL and a flight ID in your browser and have a look for more.
-
         flight_number = long_json["identification"]["number"]["default"]
         # print(flight_number)
         flight_callsign = long_json["identification"]["callsign"]
@@ -122,8 +115,6 @@ def parse_details_json():
         # altitude=long_json["trail"][0]["alt"]
         # speed=long_json["trail"][0]["spd"]
         # heading=long_json["trail"][0]["hd"]
-
-        response = long_json = ""
 
         if flight_number:
             print("Flight is called " + flight_number)
@@ -164,6 +155,7 @@ def parse_details_json():
         #    return False
 
     except (KeyError, ValueError, TypeError) as e:
+        print("Error parsing JSON, skip displaying this flight")
         print("JSON error")
         print(e)
         return False
@@ -200,6 +192,7 @@ def display_flight(oled):
 
 
 def display_details(oled, line1, line2, line3):
+    oled.fill(0)
     oled.text(line1, 0, 0)
     oled.text(line2, 0, 16)
     oled.text(line3, 0, 16 * 2)
@@ -299,8 +292,6 @@ def clear_flight(oled):
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 
-response = ""
-
 # text strings to go in the lines
 line1_short = ""
 line1_long = ""
@@ -337,20 +328,19 @@ if flight_id:
     else:
         print("New flight " + flight_id + " found, clear display")
         clear_flight(oled)
-        print(get_flight_details(flight_id))
-        # if get_flight_details(flight_id):
-        #     if parse_details_json():
-        #         display_plane(oled)
-        #         display_flight(oled)
-        #     else:
-        #         print("error parsing JSON, skip displaying this flight")
-        # else:
-        #     print("error loading details, skip displaying this flight")
+        if get_flight_details(flight_id):
+            display_plane(oled)
+            display_flight(oled)
+        else:
+            print("error loading details, skip displaying this flight")
 
         last_flight = flight_id
 else:
     print("No flights found, clear display")
     clear_flight(oled)
+
+oled.fill(0)
+oled.show()
 
 # sleep(5)
 
