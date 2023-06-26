@@ -319,36 +319,38 @@ display_logo(oled)
 sleep(2)
 
 checkConnection()
+last_flight = ""
 
-try:
-    last_flight = ""
-    flight_id = get_flights()
+while True:
+    try:
+        flight_id = get_flights()
 
-    if flight_id:
-        if flight_id == last_flight:
-            print("Same flight found, so keep showing it")
-        else:
-            print("New flight " + flight_id + " found, clear display")
-            clear_flight()
-            if get_flight_details(flight_id):
-                display_plane(oled)
-                display_flight(oled)
+        if flight_id:
+            if flight_id == last_flight:
+                print("Same flight found, so keep showing it")
             else:
-                print("error loading details, skip displaying this flight")
+                print("New flight " + flight_id + " found, clear display")
+                clear_flight()
+                if get_flight_details(flight_id):
+                    display_plane(oled)
+                    display_flight(oled)
+                else:
+                    print("error loading details, skip displaying this flight")
 
-            last_flight = flight_id
-    else:
-        print("No flights found, clear display")
-        clear_flight()
+                last_flight = flight_id
+        else:
+            print("No flights found, clear display")
+            clear_flight()
 
-    oled.fill(0)
-    oled.show()
+        oled.fill(0)
+        oled.show()
 
-    # sleep(5)
-
-    # for i in range(0, QUERY_DELAY, +5):
-    #     sleep(5)
-except KeyboardInterrupt as ke:
-    print(ke.__class__.__name__ + "-------------FORCE-TERMINATING-------------")
-    oled.fill(0)
-    oled.show()
+        print("Going to sleep for a while...")
+        sleep(5)
+        for i in range(0, QUERY_DELAY, +5):
+            sleep(5)
+    except KeyboardInterrupt as ke:
+        print(ke.__class__.__name__ + "-------------FORCE-TERMINATING-------------")
+        oled.fill(0)
+        oled.show()
+        break
