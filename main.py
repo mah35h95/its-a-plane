@@ -1,4 +1,3 @@
-import json
 from machine import Pin, SPI
 from ssd1306 import SSD1306_SPI
 import framebuf
@@ -35,7 +34,7 @@ FLIGHT_LONG_DETAILS_HEAD = (
 )
 
 # Request headers
-rheaders = {
+request_headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0",
     "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
     "accept": "application/json",
@@ -45,7 +44,7 @@ rheaders = {
 # Look for flights overhead
 def get_flights():
     try:
-        response = urequests.get(url=FLIGHT_SEARCH_URL, headers=rheaders).json()
+        response = urequests.get(url=FLIGHT_SEARCH_URL, headers=request_headers).json()
     except Exception as e:
         print("Error getting a flight")
         print(e.__class__.__name__ + "----------------ERROR---------------")
@@ -68,7 +67,7 @@ def get_flight_details(fn):
     # Get the URL response one chunk at a time
     try:
         response = urequests.get(
-            url=FLIGHT_LONG_DETAILS_HEAD + fn, headers=rheaders
+            url=FLIGHT_LONG_DETAILS_HEAD + fn, headers=request_headers
         ).json()
     # Handle occasional URL fetching errors
     except Exception as e:
@@ -116,10 +115,13 @@ def parse_details_json(long_json):
         # speed=long_json["trail"][0]["spd"]
         # heading=long_json["trail"][0]["hd"]
 
-        if flight_number:
-            print("Flight is called " + flight_number)
-        elif flight_callsign:
-            print("No flight number, callsign is " + flight_callsign)
+        if flight_number or flight_callsign:
+            print(
+                "Flight is called by Number: "
+                + flight_number
+                + ", or Call Sign: "
+                + flight_callsign
+            )
         else:
             print("No number or callsign for this flight.")
 
@@ -128,10 +130,13 @@ def parse_details_json(long_json):
 
         global line1_short, line1_long, line2_short, line2_long, line3_short, line3_long
 
-        line1_short = flight_number
-        line1_long = airline_name
-        line2_short = airport_origin_code + "-" + airport_destination_code
-        line2_long = airport_origin_name + "-" + airport_destination_name
+        if flight_number:
+            line1_short = flight_number
+        else:
+            line1_short = flight_callsign
+        line1_long = airline_name + " - " + flight_callsign
+        line2_short = airport_origin_code + " - " + airport_destination_code
+        line2_long = airport_origin_name + " - " + airport_destination_name
         line3_short = aircraft_code
         line3_long = aircraft_model
 
@@ -165,45 +170,46 @@ def parse_details_json(long_json):
 
 # Populate the lines, then scroll longer versions of the text
 def display_flight(oled):
-    global line1_short, line1_long, line2_short, line2_long, line3_short, line3_long, line1, line2, line3
+    global flight_id, line1_short, line1_long, line2_short, line2_long, line3_short, line3_long, line1, line2, line3
 
     line1 = line1_short
     line2 = line2_short
     line3 = line3_short
-    display_details(oled, line1, line2, line3)
+    display_details(oled, flight_id, line1, line2, line3)
     sleep(PAUSE_BETWEEN_LINE_SCROLLING)
 
     line1 = line1_long
-    display_details(oled, line1, line2, line3)
+    display_details(oled, flight_id, line1, line2, line3)
     sleep(PAUSE_BETWEEN_LINE_SCROLLING)
     line1 = line1_short
 
     line2 = line2_long
-    display_details(oled, line1, line2, line3)
+    display_details(oled, flight_id, line1, line2, line3)
     sleep(PAUSE_BETWEEN_LINE_SCROLLING)
     line2 = line2_short
 
     line3 = line3_long
-    display_details(oled, line1, line2, line3)
+    display_details(oled, flight_id, line1, line2, line3)
     sleep(PAUSE_BETWEEN_LINE_SCROLLING)
     line3 = line3_short
 
-    display_details(oled, line1, line2, line3)
+    display_details(oled, flight_id, line1, line2, line3)
+    sleep(PAUSE_BETWEEN_LINE_SCROLLING)
 
 
-def display_details(oled, line1, line2, line3):
+def display_details(oled, flight_id, line1, line2, line3):
     oled.fill(0)
-    oled.text(line1, 0, 0)
-    oled.text(line2, 0, 16)
-    oled.text(line3, 0, 16 * 2)
-    sleep(2)
+    oled.text("ID: " + flight_id, 0, 0)
+    oled.text(line1, 0, 16)
+    oled.text(line2, 0, 16 * 2)
+    oled.text(line3, 0, 16 * 3)
     oled.show()
     if len(line1) > 16:
-        scroll(oled, line1, 0, 0)
+        scroll(oled, line1, 0, 16)
     if len(line2) > 16:
-        scroll(oled, line2, 0, 16)
+        scroll(oled, line2, 0, 16 * 2)
     if len(line3) > 16:
-        scroll(oled, line3, 0, 16 * 2)
+        scroll(oled, line3, 0, 16 * 3)
 
 
 def scroll(oled, line, x, y):
@@ -252,6 +258,7 @@ def display_plane(oled):
 
     fb = framebuf.FrameBuffer(data, 128, 64, framebuf.MONO_HLSB)
 
+    oled.fill(0)
     for i in range(0, 112 * 2):
         # oled.invert(0)
         oled.blit(fb, 128 - i, 0)
@@ -260,7 +267,8 @@ def display_plane(oled):
 
 
 def checkConnection():
-    global wlan
+    global wlan, oled
+    display_pikachu(oled)
     # Fill in your network name (ssid) and password here:
     print("Check and reconnect WiFi")
     attempts = 10
@@ -281,9 +289,7 @@ def checkConnection():
 
 
 # Blank the display when a flight is no longer found
-def clear_flight(oled):
-    oled.fill(0)
-    oled.show()
+def clear_flight():
     global line1, line2, line3
     line1 = line2 = line3 = ""
 
@@ -309,41 +315,40 @@ spi = SPI(0, 100000, mosi=Pin(19), sck=Pin(18))
 oled = SSD1306_SPI(128, 64, spi, Pin(17), Pin(20), Pin(16))
 
 oled.fill(0)
-oled.show()
-
 display_logo(oled)
 sleep(2)
 
 checkConnection()
 
-display_pikachu(oled)
-sleep(2)
+try:
+    last_flight = ""
+    flight_id = get_flights()
 
-last_flight = ""
-flight_id = get_flights()
-
-if flight_id:
-    if flight_id == last_flight:
-        print("Same flight found, so keep showing it")
-    else:
-        print("New flight " + flight_id + " found, clear display")
-        clear_flight(oled)
-        if get_flight_details(flight_id):
-            display_plane(oled)
-            display_flight(oled)
+    if flight_id:
+        if flight_id == last_flight:
+            print("Same flight found, so keep showing it")
         else:
-            print("error loading details, skip displaying this flight")
+            print("New flight " + flight_id + " found, clear display")
+            clear_flight()
+            if get_flight_details(flight_id):
+                display_plane(oled)
+                display_flight(oled)
+            else:
+                print("error loading details, skip displaying this flight")
 
-        last_flight = flight_id
-else:
-    print("No flights found, clear display")
-    clear_flight(oled)
+            last_flight = flight_id
+    else:
+        print("No flights found, clear display")
+        clear_flight()
 
-oled.fill(0)
-oled.show()
+    oled.fill(0)
+    oled.show()
 
-# sleep(5)
+    # sleep(5)
 
-
-# for i in range(0, QUERY_DELAY, +5):
-#     sleep(5)
+    # for i in range(0, QUERY_DELAY, +5):
+    #     sleep(5)
+except KeyboardInterrupt as ke:
+    print(ke.__class__.__name__ + "-------------FORCE-TERMINATING-------------")
+    oled.fill(0)
+    oled.show()

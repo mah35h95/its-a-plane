@@ -1,0 +1,375 @@
+{
+	"identification": { "id": "30e0177c", "row": 5375424990, "number": { "default": "6E771", "alternative": null }, "callsign": "IGO771" },
+	"status": {
+		"live": true,
+		"text": "Estimated- 08:00",
+		"icon": "green",
+		"estimated": null,
+		"ambiguous": false,
+		"generic": { "status": { "text": "estimated", "color": "green", "type": "arrival" }, "eventTime": { "utc": 1687746611, "local": 1687766411 } }
+	},
+	"level": "limited",
+	"promote": false,
+	"aircraft": {
+		"model": { "code": "A20N", "text": "Airbus A320-271N" },
+		"countryId": 102,
+		"registration": "VT-ITF",
+		"age": null,
+		"msn": null,
+		"images": {
+			"thumbnails": [
+				{
+					"src": "https://cdn.jetphotos.com/200/6/309172_1678339869_tb.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10904450",
+					"copyright": "Sandeep Pilania",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/200/5/428888_1678204706_tb.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10902960",
+					"copyright": " Ritabrata Roy ",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/200/5/31792_1669879563_tb.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10784011",
+					"copyright": "Shrey Chopra",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/200/5/69685_1662071977_tb.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10706703",
+					"copyright": "Alp AKBOSTANCI",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/200/5/26379_1662059585_tb.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10691120",
+					"copyright": "Alp AKBOSTANCI",
+					"source": "Jetphotos"
+				}
+			],
+			"medium": [
+				{
+					"src": "https://cdn.jetphotos.com/400/6/309172_1678339869.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10904450",
+					"copyright": "Sandeep Pilania",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/400/5/428888_1678204706.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10902960",
+					"copyright": " Ritabrata Roy ",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/400/5/31792_1669879563.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10784011",
+					"copyright": "Shrey Chopra",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/400/5/69685_1662071977.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10706703",
+					"copyright": "Alp AKBOSTANCI",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/400/5/26379_1662059585.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10691120",
+					"copyright": "Alp AKBOSTANCI",
+					"source": "Jetphotos"
+				}
+			],
+			"large": [
+				{
+					"src": "https://cdn.jetphotos.com/640cb/6/309172_1678339869.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10904450",
+					"copyright": "Sandeep Pilania",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/640cb/5/428888_1678204706.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10902960",
+					"copyright": " Ritabrata Roy ",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/640cb/5/31792_1669879563.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10784011",
+					"copyright": "Shrey Chopra",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/640cb/5/69685_1662071977.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10706703",
+					"copyright": "Alp AKBOSTANCI",
+					"source": "Jetphotos"
+				},
+				{
+					"src": "https://cdn.jetphotos.com/640cb/5/26379_1662059585.jpg?v=0",
+					"link": "https://www.jetphotos.com/photo/10691120",
+					"copyright": "Alp AKBOSTANCI",
+					"source": "Jetphotos"
+				}
+			]
+		},
+		"hex": "800b77"
+	},
+	"airline": { "name": "IndiGo", "code": null, "url": null },
+	"owner": null,
+	"airspace": null,
+	"airport": {
+		"origin": {
+			"name": "Kolkata International Airport",
+			"code": { "iata": "CCU", "icao": "VECC" },
+			"position": {
+				"latitude": 22.65473,
+				"longitude": 88.446716,
+				"altitude": 16,
+				"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+				"region": { "city": "Kolkata" }
+			},
+			"timezone": {
+				"name": "Asia/Kolkata",
+				"offset": 19800,
+				"offsetHours": "5:30",
+				"abbr": "IST",
+				"abbrName": "India Standard Time",
+				"isDst": false
+			},
+			"visible": true,
+			"website": "http://www.aai.aero/kolkata/index.jsp",
+			"info": { "terminal": null, "baggage": null, "gate": null }
+		},
+		"destination": {
+			"name": "Bengaluru Kempegowda International Airport",
+			"code": { "iata": "BLR", "icao": "VOBL" },
+			"position": {
+				"latitude": 13.198889,
+				"longitude": 77.705559,
+				"altitude": 3002,
+				"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+				"region": { "city": "Bengaluru" }
+			},
+			"timezone": {
+				"name": "Asia/Kolkata",
+				"offset": 19800,
+				"offsetHours": "5:30",
+				"abbr": "IST",
+				"abbrName": "India Standard Time",
+				"isDst": false
+			},
+			"visible": true,
+			"website": "http://www.bengaluruairport.com/",
+			"info": { "terminal": "1", "baggage": "3", "gate": "A3" }
+		},
+		"real": null
+	},
+	"flightHistory": {
+		"aircraft": [
+			{
+				"identification": { "id": "30de8636", "number": { "default": "6E6556" } },
+				"airport": {
+					"origin": {
+						"name": "Ahmedabad International Airport",
+						"code": { "iata": "AMD", "icao": "VAAH" },
+						"position": {
+							"latitude": 23.07724,
+							"longitude": 72.634651,
+							"altitude": 189,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Ahmedabad" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": null
+					},
+					"destination": {
+						"name": "Kolkata International Airport",
+						"code": { "iata": "CCU", "icao": "VECC" },
+						"position": {
+							"latitude": 22.65473,
+							"longitude": 88.446716,
+							"altitude": 16,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Kolkata" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.aai.aero/kolkata/index.jsp"
+					}
+				},
+				"time": { "real": { "departure": 1687703954 } }
+			},
+			{
+				"identification": { "id": "30de23ac", "number": { "default": "6E6472" } },
+				"airport": {
+					"origin": {
+						"name": "Pune Airport",
+						"code": { "iata": "PNQ", "icao": "VAPO" },
+						"position": {
+							"latitude": 18.582109,
+							"longitude": 73.919693,
+							"altitude": 1942,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Pune" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.aai.aero/allAirports/pune_generalinfo.jsp"
+					},
+					"destination": {
+						"name": "Ahmedabad International Airport",
+						"code": { "iata": "AMD", "icao": "VAAH" },
+						"position": {
+							"latitude": 23.07724,
+							"longitude": 72.634651,
+							"altitude": 189,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Ahmedabad" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": null
+					}
+				},
+				"time": { "real": { "departure": 1687696049 } }
+			},
+			{
+				"identification": { "id": "30ddc3ff", "number": { "default": "6E6474" } },
+				"airport": {
+					"origin": {
+						"name": "Jodhpur Airport",
+						"code": { "iata": "JDH", "icao": "VIJO" },
+						"position": {
+							"latitude": 26.251089,
+							"longitude": 73.048859,
+							"altitude": 717,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Jodhpur" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": null
+					},
+					"destination": {
+						"name": "Pune Airport",
+						"code": { "iata": "PNQ", "icao": "VAPO" },
+						"position": {
+							"latitude": 18.582109,
+							"longitude": 73.919693,
+							"altitude": 1942,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Pune" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.aai.aero/allAirports/pune_generalinfo.jsp"
+					}
+				},
+				"time": { "real": { "departure": 1687687384 } }
+			},
+			{
+				"identification": { "id": "30dd639f", "number": { "default": "6E6473" } },
+				"airport": {
+					"origin": {
+						"name": "Pune Airport",
+						"code": { "iata": "PNQ", "icao": "VAPO" },
+						"position": {
+							"latitude": 18.582109,
+							"longitude": 73.919693,
+							"altitude": 1942,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Pune" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": "http://www.aai.aero/allAirports/pune_generalinfo.jsp"
+					},
+					"destination": {
+						"name": "Jodhpur Airport",
+						"code": { "iata": "JDH", "icao": "VIJO" },
+						"position": {
+							"latitude": 26.251089,
+							"longitude": 73.048859,
+							"altitude": 717,
+							"country": { "id": 102, "name": "India", "code": "IN", "codeLong": "IND" },
+							"region": { "city": "Jodhpur" }
+						},
+						"timezone": {
+							"name": "Asia/Kolkata",
+							"offset": 19800,
+							"offsetHours": "5:30",
+							"abbr": "IST",
+							"abbrName": "India Standard Time",
+							"isDst": false
+						},
+						"visible": true,
+						"website": null
+					}
+				},
+				"time": { "real": { "departure": 1687677845 } }
+			}
+		]
+	},
+	"ems": null,
+	"availability": ["AGE", "MSN"],
+	"time": {
+		"scheduled": { "departure": 1687739100, "arrival": 1687747500 },
+		"real": { "departure": 1687739325, "arrival": null },
+		"estimated": { "departure": null, "arrival": 1687746611 },
+		"other": { "eta": 1687746611, "updated": 1687741902 },
+		"historical": { "flighttime": "7437", "delay": "-539" }
+	},
+	"s": "iHIoYfIi5eRB3zQPWAC5dJeTsPurulRI_gtZGxT7CPCGcXNALiPcyx5NwgEiddME"
+}

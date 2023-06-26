@@ -15,7 +15,7 @@ FLIGHT_LONG_DETAILS_HEAD = (
 )
 
 # Request headers
-rheaders = {
+request_headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0",
     "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
     "accept": "application/json",
@@ -25,7 +25,7 @@ rheaders = {
 # Look for flights overhead
 def get_flights():
     try:
-        response = requests.get(url=FLIGHT_SEARCH_URL, headers=rheaders).json()
+        response = requests.get(url=FLIGHT_SEARCH_URL, headers=request_headers).json()
         print(response)
     except:
         print("Error during fetch")
@@ -43,7 +43,7 @@ def get_flights():
 
 # Take the flight ID we found with a search, and load details about it
 def get_flight_details(fn):
-    response = requests.get(url=FLIGHT_LONG_DETAILS_HEAD + fn, headers=rheaders)
+    response = requests.get(url=FLIGHT_LONG_DETAILS_HEAD + fn, headers=request_headers)
     print(response.text)
 
 
