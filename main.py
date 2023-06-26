@@ -328,6 +328,7 @@ while True:
         if flight_id:
             if flight_id == last_flight:
                 print("Same flight found, so keep showing it")
+                display_flight(oled)
             else:
                 print("New flight " + flight_id + " found, clear display")
                 clear_flight()
@@ -341,9 +342,8 @@ while True:
         else:
             print("No flights found, clear display")
             clear_flight()
-
-        oled.fill(0)
-        oled.show()
+            oled.fill(0)
+            oled.show()
 
         print("Going to sleep for a while...")
         sleep(5)
